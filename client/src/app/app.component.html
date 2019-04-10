@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #1a1b1b;">
+    <a class="navbar-brand" href="#">Chat App</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/chat" routerLinkActive="active">Chat <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a routerLink="/login" *ngIf="!_auth.loggedIn()" routerLinkActive="active" class="nav-link">Login</a></li>
+          <li class="nav-item"><a routerLink="/register" *ngIf="!_auth.loggedIn()" routerLinkActive="active" class="nav-link">Register</a></li>
+          <li class="nav-item"><a  *ngIf="_auth.loggedIn()" (click)="_auth.logOut()" routerLinkActive="active" class="nav-link">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

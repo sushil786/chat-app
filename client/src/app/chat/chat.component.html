@@ -1,0 +1,11 @@
+<div id="mario-chat">
+  <div id="chat-window">
+      <div id="output" *ngFor="let item of messageArray">
+        <span><strong>{{item.name}} : </strong> {{item.message}}</span>
+      </div>
+      <div id="typing"></div>
+  </div>
+  <input  [(ngModel)]="name" name="name" type="text" placeholder="handle">
+  <input  [(ngModel)]="message" name="message" (keypress)="userTyping()" type="text" placeholder="message">
+  <button id="send" (click)="sendMessage()" >Send</button>
+</div>
