@@ -11,12 +11,14 @@ export class ChatComponent implements OnInit {
 
   message: String;
   name: String;
+  typing : String;
   messageArray: Array<{ name: String, message: String }> = [];
   user: String
   constructor(private socket: SocketService) {
 
     this.socket.recieveMessage().subscribe(
       data => {
+        this.message = ""
         this.messageArray.push(data)
       }
     )
